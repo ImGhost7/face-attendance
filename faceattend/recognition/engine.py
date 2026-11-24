@@ -1,8 +1,8 @@
 """Thin wrappers around OpenCV's YuNet (detector) and SFace (recognizer).
 
-NOTE: written against the OpenCV >=4.8 API but NOT yet run against the real model
-files (they could not be downloaded in the build sandbox). First job on the office
-PC: `python scripts/download_models.py` then `python scripts/check_engine.py`.
+Verified on a Windows dev laptop (OpenCV 5.1.0, Python 3.14) with the real model files and a
+live webcam (scripts/live_check.py): loads, detects, embeds; same-person similarity ~0.8-0.93.
+STILL UNVERIFIED: different-person (impostor) similarity - needs a second person / photos.
 """
 from dataclasses import dataclass
 

@@ -38,7 +38,10 @@ Status: planning agreed with the project lead; owner approval for a pilot confir
 - `faceattend/recognition/` engine wrappers, quality gates, matcher + duplicate guard, vote tracker, head-turn liveness.
 - `faceattend/attendance/` event dedupe, daily presence summary (inside/outside time, exits, missing OUT), schedule rules.
 - `faceattend/db.py` full schema (persons, templates, invites, events, field duty, location pings).
-- 21 unit tests (pure logic). **Not yet verified:** `engine.py` against the real model files.
+- 21 unit tests (pure logic).
+- `engine.py` verified against the real models on the dev laptop (OpenCV 5.1, Py 3.14, webcam): same-person similarity 0.68-0.93,
+  detect ~35-100 ms + embed ~11-38 ms per frame on CPU. **Still unverified:** impostor (different-person) similarity,
+  and the yaw proxy under real head turns (frontal baseline reads about +0.12, not 0).
 
 ## Needed from the office
 1. Server specs (Task Manager -> Performance: CPU, RAM, GPU; Windows version; free disk).
