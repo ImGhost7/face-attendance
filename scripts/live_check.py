@@ -132,8 +132,9 @@ def main():
         run_stage(cap, engine, s, "3 LEFT", "slowly turn your head to YOUR LEFT, hold, come back", 6, gallery)
         run_stage(cap, engine, s, "4 RIGHT", "slowly turn your head to YOUR RIGHT, hold, come back", 6, gallery)
         if args.other:
-            say("\nSwap: a SECOND person should take the seat now. Starting in 8 seconds.")
-            t_end = time.time() + 8
+            say("\nSWAP NOW: a SECOND person should take the seat. Starting in 15 seconds.")
+            beep()
+            t_end = time.time() + 15
             while time.time() < t_end:
                 cap.read()
             run_stage(cap, engine, s, "5 OTHER", "second person looks STRAIGHT at the camera", 6, gallery)
